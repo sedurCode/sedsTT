@@ -114,9 +114,9 @@ top = padding
 bottom = height-padding
 x = 0
 font = ImageFont.load_default()
-font1 = ImageFont.truetype("/home/pi/Roboto-Light.ttf",11)
-font2 = ImageFont.truetype("/home/pi/Roboto-Bold.ttf",14)
-font3 = ImageFont.truetype("/home/pi/Roboto-Bold.ttf",48)
+font1 = ImageFont.truetype(path+"/Roboto-Light.ttf",11)
+font2 = ImageFont.truetype(path+"/Roboto-Bold.ttf",14)
+font3 = ImageFont.truetype(path+"/Roboto-Bold.ttf",48)
 draw.rectangle((0,0,width,height), outline=0, fill=0)
 draw.rectangle((0,63,127,0), outline=brite, fill=0)
 draw.text((34, 4), "TT", font=font3, fill=brite)
