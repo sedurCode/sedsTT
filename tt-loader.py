@@ -89,6 +89,8 @@ pathlength = len(path)
 searchpath = path+'**/TT-*.pd'
 files = glob.glob(searchpath)
 listsize = len(files)
+if not listsize > 0:
+    print("No files found")
 x = 0
 done = 0
 print("START",x, files[x])
