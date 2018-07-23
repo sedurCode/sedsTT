@@ -68,15 +68,16 @@ def filedisp(filename, filepath):
     font2 = ImageFont.truetype(path+"/Roboto-Light.ttf",13)
     font3 = ImageFont.truetype(path+"/Roboto-Bold.ttf",45)
     font4 = ImageFont.truetype(path+"/Roboto-Light.ttf",10)
-    font5 = ImageFont.truetype(path+"/Roboto-Regular.ttf",14)
+    #font5 = ImageFont.truetype(path+"/Roboto-Regular.ttf",14)
+    font5 = ImageFont.truetype(path+"/Roboto-Regular.ttf",20)
     #draw.rectangle((0,0,127,35), outline=brite, fill=brite)
     #draw.rectangle((1,top+3,117,34), outline=0, fill=brite)
     #draw.rectangle((126,top+3,119,34), outline=0, fill=0)
     #draw.rectangle((126,top+3,119,8), outline=0, fill=brite)
-    draw.rectangle((0,0,127,bottom-12), outline=brite, fill=brite)
-    draw.rectangle((1,top+3,117,bottom-12), outline=0, fill=brite)
-    draw.rectangle((126,top+3,119,bottom-12), outline=0, fill=0)
-    draw.rectangle((126,top+3,119,bottom-8), outline=0, fill=brite)
+    draw.rectangle((0,0,127,bottom-16), outline=brite, fill=brite) #
+    draw.rectangle((1,top+3,117,bottom-14), outline=0, fill=brite) #
+    draw.rectangle((126,top+3,119,bottom-14), outline=0, fill=0)   #
+    draw.rectangle((126,top+3,119,bottom-12), outline=0, fill=brite)#
 #    draw.rectangle((126,top+12,119,18), outline=0, fill=brite)
 #    draw.rectangle((126,top+30,119,34), outline=0, fill=brite)
 #    draw.text((12, top+12), filepath , font=font5, fill=0)
