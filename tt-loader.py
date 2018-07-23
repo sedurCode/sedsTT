@@ -90,7 +90,7 @@ searchpath = path+'**/TT-*.pd'
 files = glob.glob(searchpath)
 listsize = len(files)
 print("List size is", listsize)
-print("List element 0 is: ", files(0))
+print("List element 0 is: ", files[0])
 if not listsize > 0:
     print("No files found")
 x = 0
