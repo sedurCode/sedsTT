@@ -129,7 +129,6 @@ draw.text((39, 50), "MXMXMX", font=font1, fill=brite)
 disptop.display(image)
 time.sleep(2.0)
 disptop.clear()
-disp.clear()
 filedisp(subpath,filenm)
 
 while not done == 1:
