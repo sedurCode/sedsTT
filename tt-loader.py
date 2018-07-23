@@ -91,8 +91,8 @@ files = glob.glob(searchpath)
 listsize = len(files)
 if not files: # test to see if the list returns anything
     print("No files found")
-print("List size is", listsize)
-print("List element 0 is: ", files[0])
+print(searchpath)
+#print("List element 0 is: ", files[0])
 x = 0
 done = 0
 print("START",x, files[x])
