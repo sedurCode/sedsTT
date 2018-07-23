@@ -83,7 +83,8 @@ def filedisp(filename, filepath):
 #-------------------------------------------------------------------
 regulator = framerate_regulator(fps=40)  # Unlimited
 #path = '/home/pi/terminal_tedium/software/' #tt dir
-path = '/home/pi/terminal_tedium/software/' #tt dir
+#path = '/home/pi/terminal_tedium/software/' #tt dir
+path = os.getcwd()
 pathlength = len(path)
 searchpath = path+'**/TT-*.pd'
 files = glob.glob(searchpath)
