@@ -48,6 +48,8 @@ GPIO.setup(25, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 #-----------------------------------------------------------------------
 def filedisp(filename, filepath):
     global files
+    path = os.getcwd()
+    pathlength = len(path)
     disp.clear()
     width = disp.width
     height = disp.height
@@ -61,11 +63,11 @@ def filedisp(filename, filepath):
     bottom = height-padding
     x = 0
     font = ImageFont.load_default()
-    font1 = ImageFont.truetype("/home/pi/Roboto-Bold.ttf",12)
-    font2 = ImageFont.truetype("/home/pi/Roboto-Light.ttf",13)
-    font3 = ImageFont.truetype("/home/pi/Roboto-Bold.ttf",45)
-    font4 = ImageFont.truetype("/home/pi/Roboto-Light.ttf",10)
-    font5 = ImageFont.truetype("/home/pi/Roboto-Regular.ttf",14)
+    font1 = ImageFont.truetype(path+"/Roboto-Bold.ttf",12)
+    font2 = ImageFont.truetype(path+"/Roboto-Light.ttf",13)
+    font3 = ImageFont.truetype(path+"/Roboto-Bold.ttf",45)
+    font4 = ImageFont.truetype(path+"/Roboto-Light.ttf",10)
+    font5 = ImageFont.truetype(path+"/Roboto-Regular.ttf",14)
     draw.rectangle((0,0,127,35), outline=brite, fill=brite)
     draw.rectangle((1,top+3,117,34), outline=0, fill=brite)
     draw.rectangle((126,top+3,119,34), outline=0, fill=0)
@@ -84,8 +86,8 @@ def filedisp(filename, filepath):
 regulator = framerate_regulator(fps=40)  # Unlimited
 #path = '/home/pi/terminal_tedium/software/' #tt dir
 #path = '/home/pi/terminal_tedium/software/' #tt dir
-path = os.getcwd()
-pathlength = len(path)
+#path = os.getcwd()
+#pathlength = len(path)
 searchpath = path+'/**/TT-*.pd'
 files = glob.glob(searchpath)
 listsize = len(files)
