@@ -49,7 +49,6 @@ GPIO.setup(25, GPIO.IN, pull_up_down = GPIO.PUD_UP)
 def filedisp(filename, filepath):
     global files
     path = os.getcwd()
-    pathlength = len(path)
     disp.clear()
     width = disp.width
     height = disp.height
@@ -86,8 +85,8 @@ def filedisp(filename, filepath):
 regulator = framerate_regulator(fps=40)  # Unlimited
 #path = '/home/pi/terminal_tedium/software/' #tt dir
 #path = '/home/pi/terminal_tedium/software/' #tt dir
-#path = os.getcwd()
-#pathlength = len(path)
+path = os.getcwd()
+pathlength = len(path)
 searchpath = path+'/**/TT-*.pd'
 files = glob.glob(searchpath)
 listsize = len(files)
