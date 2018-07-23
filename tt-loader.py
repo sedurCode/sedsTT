@@ -77,8 +77,8 @@ def filedisp(filename, filepath):
 #    draw.rectangle((126,top+30,119,34), outline=0, fill=brite)
     draw.text((12, top+12), filepath , font=font5, fill=0)
 #    draw.text((5, top+10), filename , font=font2, fill=0)
-    draw.text((14, top+45), "Buttons 1 & 2 to scroll", font=font4, fill=brite)
-    draw.text((14, top+55), "LED button to load", font=font4, fill=brite)
+#    draw.text((14, top+45), "Buttons 1 & 2 to scroll", font=font4, fill=brite)
+#    draw.text((14, top+55), "LED button to load", font=font4, fill=brite)
 #    disp.image(image)
     with regulator:
         disp.display(image)
