@@ -82,12 +82,13 @@ def filedisp(filename, filepath):
 
 #-------------------------------------------------------------------
 regulator = framerate_regulator(fps=40)  # Unlimited
+#path = '/home/pi/terminal_tedium/software/' #tt dir
 path = '/home/pi/terminal_tedium/software/' #tt dir
 pathlength = len(path)
 searchpath = path+'**/TT-*.pd'
 files = glob.glob(searchpath)
 listsize = len(files)
-x=0
+x = 0
 done = 0
 print("START",x, files[x])
 # display first file name
