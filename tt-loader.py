@@ -22,7 +22,7 @@ botserial = i2c(port=1, address=0x3c)
 
 # substitute ssd1331(...) or sh1106(...) below if using that device
 #disp = sh1106(botserial)
-disp = ssd1306(botserial)
+dis3p = ssd1306(botserial)
 topserial = i2c(port=1, address=0x3C)
 #disptop = sh1106(topserial)
 disptop = ssd1306(topserial)
@@ -127,9 +127,12 @@ draw.text((25, 2), "terminal tedium", font=font1, fill=brite)
 draw.text((39, 50), "MXMXMX", font=font1, fill=brite)
 #topdisp.image(image)
 disptop.display(image)
+time.sleep(2.0)
+disptop.clear()
+disp.clear()
 filedisp(subpath,filenm)
 
-while not done==1:
+while not done == 1:
     up = not GPIO.input(23) # these things are inverted, so I inverted them again
     down = not GPIO.input(25)
     select = not GPIO.input(24)
