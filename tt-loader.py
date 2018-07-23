@@ -21,9 +21,11 @@ botserial = i2c(port=1, address=0x3c)
 #botserial = i2c(port=1, address=0x3D)
 
 # substitute ssd1331(...) or sh1106(...) below if using that device
-disp = sh1106(botserial)
+#disp = sh1106(botserial)
+disp = ssd1306(botserial)
 topserial = i2c(port=1, address=0x3C)
-disptop = sh1106(topserial)
+#disptop = sh1106(topserial)
+disptop = ssd1306(topserial)
 #----------------------------------------------
 
 # Raspberry Pi pin configuration:
