@@ -86,7 +86,7 @@ regulator = framerate_regulator(fps=40)  # Unlimited
 #path = '/home/pi/terminal_tedium/software/' #tt dir
 path = os.getcwd()
 pathlength = len(path)
-searchpath = path+'**/TT-*.pd'
+searchpath = path+'/**/TT-*.pd'
 files = glob.glob(searchpath)
 listsize = len(files)
 if not files: # test to see if the list returns anything
