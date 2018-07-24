@@ -158,7 +158,7 @@ print(searchpath)
 x = 0
 done = 0
 print("START",x, files[x])
-l#p.LedCtrlString( "Hello", 3,1, direction = -1, waitms = 100 )
+#lp.LedCtrlString( "Hello", 3,1, direction = -1, waitms = 100 )
 lp.LedCtrlString( "MXMXMX Terminal Tedium ", 0, 3, direction = -1, waitms = 75)
 lp.ButtonFlush()
 # display first file name
