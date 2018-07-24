@@ -242,7 +242,7 @@ while not done == 1:
 
     but = lp.ButtonStateRaw()
     if but != []:
-        print( butHit, " event: ", but )
+        print("Event: ", but )
         print("Exiting")
         break
 
