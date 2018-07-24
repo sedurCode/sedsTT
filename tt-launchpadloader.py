@@ -253,6 +253,8 @@ while not done == 1:
             oledfilepath = filepath+'tt-OLED.py'
 #            exestring = '/home/pi/pd-0.46-7/bin/pd ' + '-nogui '+ '-rt '+ files[x]+ ' 2>&1 '+ '| python '+ oledfilepath
             exestring = '/home/pi/pd-0.47-1/bin/pd -nogui -rt -midiindev 2 '+ files[x]+ ' 2>&1 | python '+ oledfilepath
+            lp.Reset() # turn all LEDs off
+            lp.Close() # close the Launchpad (will quit with an error due to a PyGame bug)
             os.system(exestring)
             break
     lp.LedCtrlRaw( random.randint(0,127), random.randint(0,3), random.randint(0,3) )
