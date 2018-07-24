@@ -240,6 +240,12 @@ while not done == 1:
             os.system(exestring)
             break
 
+    but = lp.ButtonStateRaw()
+    if but != []:
+        print( butHit, " event: ", but )
+        print("Exiting")
+        break
+
     lp.LedCtrlRaw( random.randint(0,127), random.randint(0,3), random.randint(0,3) )
     time.sleep( 0.005 )
 
