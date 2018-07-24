@@ -159,7 +159,7 @@ x = 0
 done = 0
 print("START",x, files[x])
 #lp.LedCtrlString( "Hello", 3,1, direction = -1, waitms = 100 )
-lp.LedCtrlString( "MXMXMX Terminal Tedium ", 0, 3, direction = -1, waitms = 75)
+lp.LedCtrlString( "MXMXMX", 0, 3, direction = -1, waitms = 75)
 lp.ButtonFlush()
 # display first file name
 filenm = files[x][files[x].find('TT-'):99]
@@ -198,6 +198,22 @@ while not done == 1:
     up = not GPIO.input(23) # these things are inverted, so I inverted them again
     down = not GPIO.input(25)
     select = not GPIO.input(24)
+    but = lp.ButtonStateRaw()
+    if but != []:
+        butnum = but[0]
+        butlogic = but[1]
+        print("Event: ", but )
+        print(but[0])
+        print(but[1])
+        if butnum == 207:
+            print("Exiting")
+            break
+        elif butnum == 200:
+            up = 1
+        elif butnum == 201:
+            down = 1
+        elif butnum == 204:
+            select = 1
 #        print up,down,select
 #        if msvcrt.kbhit():              # Key pressed?
     if up == 1 or down == 1 or select == 1:
@@ -239,18 +255,6 @@ while not done == 1:
             exestring = '/home/pi/pd-0.47-1/bin/pd -nogui -rt -midiindev 2 '+ files[x]+ ' 2>&1 | python '+ oledfilepath
             os.system(exestring)
             break
-
-    but = lp.ButtonStateRaw()
-    if but != []:
-        butnum = but[0]
-        butlogic = but[1]
-        print("Event: ", but )
-        print(but[0])
-        print(but[1])
-        if butnum == 207:
-            print("Exiting")
-            break
-
     lp.LedCtrlRaw( random.randint(0,127), random.randint(0,3), random.randint(0,3) )
     time.sleep( 0.005 )
 
