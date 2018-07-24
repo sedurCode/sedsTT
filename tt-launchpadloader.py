@@ -242,6 +242,7 @@ while not done == 1:
     lp.Reset() # turn all LEDs off
     lp.Close() # close the Launchpad (will quit with an error due to a PyGame bug)
     lp.LedCtrlRaw( random.randint(0,127), random.randint(0,3), random.randint(0,3) )
+    time.sleep( 0.005 )
 #        print filepath, filenm
 #sudo rm list2.txt && echo 'rec.wav' >> list2.txt && ls >> list2.txt
 
