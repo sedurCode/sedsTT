@@ -3,6 +3,7 @@
 import time, sys, os, glob, subprocess
 from luma.core.sprite_system import framerate_regulator
 from time import sleep
+
 try:
 	import launchpad_py as launchpad
 except ImportError:
@@ -236,10 +237,10 @@ while not done == 1:
 #            exestring = '/home/pi/pd-0.46-7/bin/pd ' + '-nogui '+ '-rt '+ files[x]+ ' 2>&1 '+ '| python '+ oledfilepath
             exestring = '/home/pi/pd-0.47-1/bin/pd -nogui -rt -midiindev 2 '+ files[x]+ ' 2>&1 | python '+ oledfilepath
             os.system(exestring)
-            lp.Reset() # turn all LEDs off
-	        lp.Close() # close the Launchpad (will quit with an error due to a PyGame bug)
             break
 
+    lp.Reset() # turn all LEDs off
+    lp.Close() # close the Launchpad (will quit with an error due to a PyGame bug)
     lp.LedCtrlRaw( random.randint(0,127), random.randint(0,3), random.randint(0,3) )
 #        print filepath, filenm
 #sudo rm list2.txt && echo 'rec.wav' >> list2.txt && ls >> list2.txt
