@@ -242,9 +242,14 @@ while not done == 1:
 
     but = lp.ButtonStateRaw()
     if but != []:
+        butnum = but[0]
+        butlogic = but[1]
         print("Event: ", but )
-        print("Exiting")
-        break
+        print(but[0])
+        print(but[1])
+        if butnum == 207:
+            print("Exiting")
+            break
 
     lp.LedCtrlRaw( random.randint(0,127), random.randint(0,3), random.randint(0,3) )
     time.sleep( 0.005 )
