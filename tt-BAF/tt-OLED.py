@@ -63,7 +63,8 @@ plotdata = list()
 #----------------------------LUMA SETUP-----------------------------------------
 from luma.core.interface.serial import i2c, spi
 from luma.core.render import canvas
-from luma.oled.device import sh1106
+#from luma.oled.device import sh1106
+from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
 from luma.core.sprite_system import framerate_regulator
 #topserial = i2c(port=1, address=0x3C)
 #botserial = i2c(port=1, address=0x3D)
