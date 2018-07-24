@@ -99,7 +99,6 @@ else:
 if mode is None:
 	print("Did not find any Launchpads, meh...")
 
-lp.ButtonFlush()
 
 #-----------------------------------------------------------------------
 def filedisp(filename, filepath):
@@ -144,7 +143,6 @@ def filedisp(filename, filepath):
         disp.display(image)
 
 #-------------------------------------------------------------------
-lp.LedCtrlString( "HELLO ", 0, 3, -1 )
 regulator = framerate_regulator(fps=40)  # Unlimited
 #path = '/home/pi/terminal_tedium/software/' #tt dir
 #path = '/home/pi/terminal_tedium/software/' #tt dir
@@ -160,6 +158,8 @@ print(searchpath)
 x = 0
 done = 0
 print("START",x, files[x])
+lp.LedCtrlString( "MXMXMX Terminal Tedium ", 0, 3, -1 )
+lp.ButtonFlush()
 # display first file name
 filenm = files[x][files[x].find('TT-'):99]
 filepath = files[x][0:files[x].find('TT-')]
