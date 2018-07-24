@@ -208,11 +208,11 @@ while not done == 1:
         if butnum == 207:
             print("Exiting")
             break
-        elif butnum == 200:
+        elif butnum == 200 && butlogic == False:
             up = 1
-        elif butnum == 201:
+        elif butnum == 201 && butlogic == False:
             down = 1
-        elif butnum == 204:
+        elif butnum == 204 && butlogic == False:
             select = 1
 #        print up,down,select
 #        if msvcrt.kbhit():              # Key pressed?
