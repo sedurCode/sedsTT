@@ -98,7 +98,6 @@ else:
 
 if mode is None:
 	print("Did not find any Launchpads, meh...")
-	return
 
 lp.ButtonFlush()
 
