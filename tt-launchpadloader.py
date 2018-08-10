@@ -27,15 +27,15 @@ from luma.oled.device import ssd1306, ssd1325, ssd1331, sh1106
 
 # rev.1 users set port=0
 # substitute spi(device=0, port=0) below if using that interface
-botserial = i2c(port=1, address=0x3c)
-#botserial = i2c(port=1, address=0x3D)
+#botserial = i2c(port=1, address=0x3c)
+botserial = i2c(port=1, address=0x3D)
 
 # substitute ssd1331(...) or sh1106(...) below if using that device
-#disp = sh1106(botserial)
-disp = ssd1306(botserial)
+disp = sh1106(botserial)
+#disp = ssd1306(botserial)
 topserial = i2c(port=1, address=0x3C)
-#disptop = sh1106(topserial)
-disptop = ssd1306(topserial)
+disptop = sh1106(topserial)
+#disptop = ssd1306(topserial)
 #----------------------------------------------
 
 # Raspberry Pi pin configuration:
