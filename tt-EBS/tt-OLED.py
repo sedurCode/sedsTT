@@ -111,13 +111,13 @@ font = ImageFont.load_default()
 
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-# font = ImageFont.truetype('/home/pi/Roboto-Bold.ttf', 8)
-font1 = ImageFont.truetype("/home/pi/Roboto-Light.ttf",11)
-font2 = ImageFont.truetype("/home/pi/Roboto-Light.ttf",13)
-font3 = ImageFont.truetype("/home/pi/Roboto-Bold.ttf",20)
-font4 = ImageFont.truetype("/home/pi/Roboto-Bold.ttf",14)
-font5 = ImageFont.truetype("/home/pi/Roboto-Light.ttf",10)
-font6 = ImageFont.truetype("/home/pi/Roboto-Light.ttf",12)
+# font = ImageFont.truetype('/home/pi/sedsTT/Roboto-Bold.ttf', 8)
+font1 = ImageFont.truetype("/home/pi/sedsTT/sedsTT/Roboto-Light.ttf",11)
+font2 = ImageFont.truetype("/home/pi/sedsTT/Roboto-Light.ttf",13)
+font3 = ImageFont.truetype("/home/pi/sedsTT/Roboto-Bold.ttf",20)
+font4 = ImageFont.truetype("/home/pi/sedsTT/Roboto-Bold.ttf",14)
+font5 = ImageFont.truetype("/home/pi/sedsTT/Roboto-Light.ttf",10)
+font6 = ImageFont.truetype("/home/pi/sedsTT/Roboto-Light.ttf",12)
 
 draw.rectangle((0,0,width,height), outline=0, fill=255)
 draw.text((x, top+15)," tt-EBS",  font=font3, fill=0)
@@ -141,11 +141,11 @@ while True:
         draw.text((x, top), "-------- SELECT LOOP --------", font=font6, fill=255)
         draw.rectangle((0,13,127,38), outline=255, fill=255)
         draw.rectangle((1,top+16,117,37), outline=0, fill=255)
-	draw.text((x, top+22),str(line1),  font=font1, fill=0) 
-        draw.rectangle((126,top+16,119,37), outline=0, fill=0) 
-        draw.rectangle((126,top+16,119,21), outline=0, fill=255) 
-	draw.text((x, top+45), "Buttons 1 & 2 to scroll", font=font5, fill=255) 
-        draw.text((x, top+55), "LED button to load", font=font5, fill=255)      
+	draw.text((x, top+22),str(line1),  font=font1, fill=0)
+        draw.rectangle((126,top+16,119,37), outline=0, fill=0)
+        draw.rectangle((126,top+16,119,21), outline=0, fill=255)
+	draw.text((x, top+45), "Buttons 1 & 2 to scroll", font=font5, fill=255)
+        draw.text((x, top+55), "LED button to load", font=font5, fill=255)
         disptop.display(image)
     elif (TT[0:8] == "print: 2"):
         line2 = TT[8: ]
@@ -170,8 +170,9 @@ while True:
         draw.text((5, top+20),"Launching Patch Loader",  font=font1, fill=255)
         disptop.display(image)
         time.sleep(1)
-        exestring = "sudo killall -9 pd python ; sudo python /home/pi/terminal_tedium/software/tt-loader.py"
-        os.system(exestring)        
+        #exestring = "sudo killall -9 pd python ; sudo python /home/pi/terminal_tedium/software/tt-loader.py"
+        exestring = "sudo killall -9 pd python ; sudo python /home/pi/sedsTT/tt-launchpadloader.py"
+        os.system(exestring)
 # bottom OLED display - with knob setting bar chart
     elif (TT[0:8] == 'print: X'):
         draw.rectangle((0,0,width,height), outline=0, fill=0)
@@ -188,16 +189,16 @@ while True:
                 draw.rectangle((101,63,102,knob1), outline=1, fill=255)
             elif (i == 101):
                 knob2=63-plotdata[i]
-                draw.rectangle((106,63,107,knob2), outline=1, fill=255)                
+                draw.rectangle((106,63,107,knob2), outline=1, fill=255)
             elif (i == 102):
                 knob3=63-plotdata[i]
-                draw.rectangle((111,63,112,knob3), outline=1, fill=255)                
+                draw.rectangle((111,63,112,knob3), outline=1, fill=255)
             elif (i == 103):
                 knob4=63-plotdata[i]
-                draw.rectangle((116,63,117,knob4), outline=1, fill=255)                
+                draw.rectangle((116,63,117,knob4), outline=1, fill=255)
             elif (i == 104):
                 knob5=63-plotdata[i]
-                draw.rectangle((121,63,122,knob5), outline=1, fill=255)                
+                draw.rectangle((121,63,122,knob5), outline=1, fill=255)
             elif ((i == 105) and (plotdata[i]==1)):
                 draw.rectangle((126,60,127,50), outline=1, fill=255)
             elif ((i == 106) and (plotdata[i]==1)):
