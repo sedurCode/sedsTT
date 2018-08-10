@@ -140,6 +140,7 @@ def filedisp(filename, filepath):
 #    disp.image(image)
     with regulator:
         disp.display(image)
+		disptop.display(image)
 
 #-------------------------------------------------------------------
 regulator = framerate_regulator(fps=40)  # Unlimited
@@ -188,6 +189,7 @@ draw.text((25, 2), "terminal tedium", font=font1, fill=brite)
 draw.text((39, 50), "MXMXMX", font=font1, fill=brite)
 #topdisp.image(image)
 disptop.display(image)
+disp.display(image)
 time.sleep(2.0)
 disptop.clear()
 disp.clear()
