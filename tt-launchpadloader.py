@@ -259,7 +259,7 @@ while not done == 1:
     lp.LedCtrlRaw( random.randint(0,127), random.randint(0,3), random.randint(0,3) )
     time.sleep( 0.005 )
 
-lp.Reset() # turn all LEDs off
+#lp.Reset() # turn all LEDs off
 lp.Close() # close the Launchpad (will quit with an error due to a PyGame bug)
 
 #        print filepath, filenm
