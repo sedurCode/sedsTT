@@ -140,6 +140,7 @@ def filedisp(filename, filepath):
 #    disp.image(image)
     with regulator:
         disp.display(image)
+	with regulator:
 		disptop.display(image)
 
 #-------------------------------------------------------------------
